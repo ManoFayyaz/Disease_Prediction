@@ -11,7 +11,7 @@ if pic is not None:
     if st.button("Predict"):
         with st.spinner("Predicting......"):
 
-            file={"file":pic.getvalue()}
+            files = {"file": (pic.name, pic, "image/jpeg")}
             
             url="http://127.0.0.1:5000/predict"
             response=requests.post(url,files=file)    
