@@ -11,10 +11,10 @@ if pic is not None:
     if st.button("Predict"):
         with st.spinner("Predicting......"):
 
-            files = {"file": (pic.name, pic, "image/jpeg")}
-            
+           files = {"file": pic.getvalue()}
+
             url="http://127.0.0.1:5000/predict"
-            response=requests.post(url,files=file)    
+            response=requests.post(url,files=files)    
 
             if response.status_code==200:
                 result=response.json()["prediction"]
