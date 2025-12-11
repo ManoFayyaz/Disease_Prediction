@@ -34,6 +34,11 @@ def explain_prediction(predicted_class):
             return "Unknown class"
 
 
+@app.route("/")
+def home():
+    return jsonify({"message": "Skin Disease Detector API is running"})
+
+
 @app.route("/predict",methods=["POST"])
 def predict():
    if 'file' not in request.files:
