@@ -17,19 +17,49 @@ def preprocess(image):
 def explain_prediction(predicted_class):
     match predicted_class:
         case 0:
-            return "Actinic Keratoses: Precancerous lesions caused by chronic sun exposure.Usually rough, scaly, or crusty patches. Can develop into squamous cell carcinoma if untreated."
+            return (
+                    "Actinic Keratoses: Precancerous lesions caused by chronic sun exposure. "
+                    "Usually rough, scaly patches and can develop into squamous cell carcinoma if untreated. "
+                    "Treatment: Dermatologists commonly use cryotherapy (freezing), topical creams, or light-based therapies. "
+                    "Sun protection is essential to prevent worsening."
+            )       
         case 1:
-            return "Basal Cell Carcinoma: A common type of skin cancer that arises from basal cells in the epidermis. Often appears as pearly or waxy bumps, sometimes with visible blood vessels."
+            return (
+                    "Basal Cell Carcinoma: A common type of skin cancer arising from basal cells. "
+                    "Often appears as pearly or waxy bumps with visible vessels. "
+                    'Treatment: Usually removed through minor surgery. Dermatologists may use excision, Mohs surgery, '
+                    'or topical treatments depending on severity.'
+                    )      
         case 2:
-            return "Benign Keratosis-like Lesions: Non-cancerous skin growths that may appear as scaly, wart-like patches. They are usually benign but can be cosmetically concerning."
+            return (
+                "Benign Keratosis-like Lesions: Non-cancerous growths that appear as scaly or wart-like patches. "
+                "Harmless but may be cosmetically concerning. "
+                "Treatment: Generally no treatment needed. Removal options include cryotherapy or minor procedures if desired."
+            )
         case 3:
-            return "Dermatofibroma: A benign skin tumor that appears as a firm, raised nodule. Often found on the limbs and can be itchy or tender."
+             return (
+                "Dermatofibroma: A benign skin nodule usually found on limbs; firm and sometimes itchy. "
+                "Treatment: Typically harmless and requires no treatment. Removal possible via minor surgery if symptomatic."
+            )
         case 4:
-            return "Melanocytic Nevi: Commonly known as moles, these are benign proliferations of melanocytes. They can vary in color and size and are usually harmless."
+            return (
+                "Melanocytic Nevi (Moles): Benign clusters of melanocytes that vary in size and color. "
+                "Usually harmless. "
+                "Treatment: No treatment required unless the mole changes shape/color or becomes symptomatic — then evaluation and possible removal is recommended."
+            )
         case 5:
-            return "Melanoma: A serious form of skin cancer that originates in melanocytes. It can appear as an irregular mole or dark spot and has a high potential to spread if not detected early."
+            return (
+                "Melanoma: A serious and potentially aggressive skin cancer arising from melanocytes. "
+                "Often appears as an irregular, changing mole. "
+                "Treatment: Requires urgent attention. Standard treatment includes surgical removal and, in advanced cases, "
+                "targeted or immunotherapy (as determined by specialists). Early detection is critical."
+            )
         case 6:
-            return "Vascular Lesions: Benign growths of blood vessels that can appear as red or purple marks on the skin. They are usually harmless and may fade over time."
+              return (
+                "Vascular Lesions: Benign growths or clusters of blood vessels appearing red or purple. "
+                "Usually harmless and may fade naturally. "
+                "Treatment: Often no treatment required. Options like laser therapy may be used for cosmetic improvement."
+            )
         case _:
             return "Unknown class"
 
