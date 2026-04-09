@@ -5,7 +5,11 @@ import numpy as np
 
 app=Flask(__name__)
 
-model=joblib.load('rf_model.pkl')
+@st.cache_resource
+def load_model():
+    model=joblib.load('rf_model.pkl')
+
+model=load_model()
 
 feature_names=["thal", "ca", "cp", "thalach", "oldpeak", "exang", "age",
     "chol", "trestbps", "slope", "sex", "restecg", "fbs"]
