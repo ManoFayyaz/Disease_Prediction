@@ -18,7 +18,7 @@ if pic is not None:
 
             files = {"file": pic.getvalue()}
 
-            url="https://diseaseprediction-production-f07e.up.railway.app/predict"
+            url="https://diseaseprediction-production-9000.up.railway.app//predict"
             response=requests.post(url,files=files)    
 
             if response.status_code==200:
