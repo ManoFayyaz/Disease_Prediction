@@ -16,7 +16,7 @@ if pic is not None:
     if st.button("Predict"):
         with st.spinner("Predicting......"):
 
-            files = {"file": pic.getvalue()}
+            files = {"file": (pic.name, pic.getvalue(), pic.type)}
 
             url="https://diseaseprediction-production-9000.up.railway.app/predict"
             response=requests.post(url,files=files)    
