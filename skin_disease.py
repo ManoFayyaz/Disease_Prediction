@@ -18,11 +18,12 @@ if pic is not None:
 
             files = {"file": (pic.name, pic.getvalue(), pic.type)}
 
-            url="https://diseaseprediction-production-9000.up.railway.app/predict"
+            # url="https://diseaseprediction-production-9000.up.railway.app/predict"
+            url = "http://127.0.0.1:5001/predict"
             response=requests.post(url,files=files)    
-
+            
             if response.status_code==200:
                 result=response.json()["prediction"]
                 st.success(f"Disease detected to be  {result} ")
             else:
-                st.error("Bcakend Issue!")
+                st.error("Backend Issue!")

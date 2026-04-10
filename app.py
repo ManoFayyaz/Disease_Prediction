@@ -80,66 +80,12 @@ def predict():
    result=explain_prediction(result)
    return jsonify({"prediction": result})
 
-
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host="0.0.0.0", port=port)
+    # Change 'port' to a fixed number, NOT the env variable
+    app.run(host="0.0.0.0", port=5001)
 
-
-
-
-
-
-# #URL Routing
-# @app.route("/",methods=["GET"])
-# def welcome():
-#     return "<h1>Welcome to my app</h1>"
-
-# @app.route("/index",methods=["GET"])
-# def index():
-#     return "Index page"
-
-# #variable rule
-# @app.route('/success/<int:score>')
-# def success(score):
-#     # return "Passed!!!   Score: "+ str(score)
-#     return render_template('success.html',score=score)
-
-
-# @app.route('/fail/<int:score>')
-# def fail(score):
-#     return "Fail!!! Score: "+ str(score)
-
-
-# @app.route('/form',methods=["GET","POST"])
-# def form():
-#     if request.method=="GET":
-#         return render_template('form.html')
-#     else:
-#         maths=float(request.form["maths"])
-#         history=float(request.form["history"])
-#         english=float(request.form["english"])
-
-#         total_marks=maths+history+english
-#         avg_marks=round((maths+history+english)/3,3)
-        
-#         res=""
-
-#         if avg_marks>=50:
-#             res="success"
-#         else:
-#             res="fail"    
-
-#         return(redirect(url_for(res,score=avg_marks)))
-#         # return render_template('form.html',avg=avg_marks,total=total_marks)
-
-# @app.route('/api', methods=['POST'])
-# def calculate_sum():
-#     data = request.get_json()
-
-#     a_val = float(data['a'])
-#     b_val = float(data['b'])
-
-#     return jsonify({"sum": a_val + b_val})
+# if __name__ == "__main__":
+#     port = int(os.environ.get("PORT", 5000))
+#     app.run(host="0.0.0.0", port=port)
 
 
